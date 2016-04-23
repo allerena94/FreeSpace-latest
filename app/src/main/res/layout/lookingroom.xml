@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/freespace_blue"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="306dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Looking for a room as a(n)"
+        android:textColor="@color/white"
+        android:textSize="35dp"
+        android:textAlignment="center"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.11" />
+
+    <Button
+        android:layout_width="245dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="50dp"
+        android:background="@color/freespace_yellow"
+        android:textSize="28dp"
+        android:text="Individual"
+        android:textColor="@color/freespace_blue"
+        android:id="@+id/individual"
+        android:layout_gravity="center_horizontal" />
+
+    <Button
+        android:layout_width="245dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="35dp"
+        android:background="@color/freespace_yellow"
+        android:textSize="28dp"
+        android:text="Group"
+        android:textColor="@color/freespace_blue"
+        android:id="@+id/group"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>

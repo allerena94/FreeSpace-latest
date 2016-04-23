@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyActionBarLogo" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="logo">@drawable/actionbar_logo_position</item>
+        <item name="displayOptions">useLogo|showHome</item>
+    </style>
+</resources>
