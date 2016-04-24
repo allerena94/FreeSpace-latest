@@ -35,7 +35,7 @@ public class LookingRoomActivity extends AppCompatActivity {
         individual.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    Intent it = new Intent(LookingRoomActivity.this, IndividualDashboardActivity.class);
+                    Intent it = new Intent(LookingRoomActivity.this, AvailableRoomsActivity.class);
                     startActivity(it);
                     //return;
             }

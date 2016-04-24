@@ -40,6 +40,9 @@
         <activity
             android:name=".GroupDashboardActivity">
         </activity>
+        <activity
+            android:name=".AvailableRoomsActivity">
+        </activity>
     </application>
 
 </manifest>
