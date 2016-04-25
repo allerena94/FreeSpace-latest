@@ -28,8 +28,6 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Firebase.setAndroidContext(this);
-        final Firebase myFirebaseRef = new Firebase("https://sweltering-torch-6902.firebaseio.com/");
         setContentView(R.layout.activity_login);
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/LatoLight.ttf");
         Typeface custom_font1 = Typeface.createFromAsset(getAssets(), "fonts/LatoRegular.ttf");
@@ -58,18 +56,14 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 sUser = user.getText().toString();
                 sPass = pass.getText().toString();
-                myFirebaseRef.authWithPassword(sUser, sPass, new Firebase.AuthResultHandler() {
-                    @Override
-                    public void onAuthenticated(AuthData authData) {
-                        Intent it = new Intent(LoginActivity.this, LookingRoomActivity.class);
-                        startActivity(it);
-                    }
 
-                    @Override
-                    public void onAuthenticationError(FirebaseError firebaseError) {
-                        Toast.makeText(getApplicationContext(), "Incorrect Login!", Toast.LENGTH_SHORT).show();
-                    }
-                });
+                if (sUser.matches("") && sPass.matches("")) {
+                    Intent it = new Intent(LoginActivity.this, LookingRoomActivity.class);
+                    startActivity(it);
+                    //return;
+                } else {
+                    Toast.makeText(getApplicationContext(), "Incorrect Login!", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

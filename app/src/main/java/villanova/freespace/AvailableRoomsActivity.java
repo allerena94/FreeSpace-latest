@@ -1,27 +1,38 @@
 package villanova.freespace;
 
+import android.app.ListActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
 import java.util.ArrayList;
 
 public class AvailableRoomsActivity extends AppCompatActivity {
-
-    String[] listItems = { "Bartley 1011", "Bartley 1010", "Ceer 001", "Ceer 109" };
-
-    ListView roomList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.available_rooms);
 
-        roomList = (ListView) findViewById(R.id.listOfRooms);
+        // 1. pass context and data to the custom adapter
+        CustomAdapter adapter = new CustomAdapter(this, generateData());
 
-        ArrayAdapter<String> roomAdapter = new ArrayAdapter<String>(this,R.layout.list_white_text, R.id.list_content, listItems);
+        // 2. Get ListView from activity_main.xml
+        ListView listView = (ListView) findViewById(R.id.listOfRooms);
 
-        roomList.setAdapter(roomAdapter);
+        // 3. setListAdapter
+        listView.setAdapter(adapter);
+
+    }
+
+    private ArrayList<Room> generateData(){
+        ArrayList<Room> items = new ArrayList<Room>();
+        items.add(new Room("Bartley 1001", "0", "60"));
+        items.add(new Room("Bartley 1010", "0", "10"));
+        items.add(new Room("Bartley 1011", "0", "30"));
+        items.add(new Room("Bartley 1047", "0", "50"));
+        items.add(new Room("Bartley 1064", "0", "60"));
+
+        return items;
     }
 }

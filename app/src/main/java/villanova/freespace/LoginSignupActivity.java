@@ -59,9 +59,11 @@ public class LoginSignupActivity extends AppCompatActivity {
                     }
                     @Override
                     public void onError(FirebaseError firebaseError) {
-                        Toast.makeText(getApplicationContext(), "Error: sign up has failed"+firebaseError.getDetails(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Error: sign up has failed"+ firebaseError.getDetails(), Toast.LENGTH_SHORT).show();
                     }
                 });
+
+
 
                 Intent it = new Intent(LoginSignupActivity.this, LoginActivity.class);
                 startActivity(it);

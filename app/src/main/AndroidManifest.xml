@@ -41,7 +41,9 @@
             android:name=".GroupDashboardActivity">
         </activity>
         <activity
-            android:name=".AvailableRoomsActivity">
+            android:name=".AvailableRoomsActivity"
+            android:theme="@style/AppTheme"
+            android:label="listview_available_rooms">
         </activity>
     </application>
 
