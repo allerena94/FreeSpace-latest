@@ -32,6 +32,7 @@ public class AvailableRoomsActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot snapshot) {
                 int i = 0;
                 for(DataSnapshot roomSnapshot:snapshot.getChildren()) {
+                    listItems = new String[(int)snapshot.getChildrenCount()];
                     Room room = roomSnapshot.getValue(Room.class);
                     listItems[i] = room.getBuilding() + " " + room.getRoom();
                     System.out.println(room.getRoom());
