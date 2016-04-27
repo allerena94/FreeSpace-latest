@@ -1,6 +1,7 @@
 package villanova.freespace;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        /*rHelper.insertRoom(new Room("Bartley 1001", "LH", 0, "60"));
+        rHelper.insertRoom(new Room("Bartley 1010", "LH", 0, "60"));
+        rHelper.insertRoom(new Room("Bartley 1011", "A", 0, "117"));
+        rHelper.insertRoom(new Room("Bartley 1047", "C", 0, "36"));
+        rHelper.insertRoom(new Room("Bartley 1064", "C", 0, "38"));*/
+
         new Handler().postDelayed(new Runnable() {
 
             /*
@@ -30,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         }, SPLASH_TIME_OUT);
+
     }
 
     @Override

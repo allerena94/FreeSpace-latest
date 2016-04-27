@@ -39,7 +39,7 @@ public class CustomAdapter extends ArrayAdapter<Room> {
         roomView.setText(itemsArrayList.get(position).getName());
         statusView.setText(itemsArrayList.get(position).getStatus());
 
-        // 5. retrn rowView
+        // 5. return rowView
         return rowView;
     }
 

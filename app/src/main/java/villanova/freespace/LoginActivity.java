@@ -8,11 +8,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.firebase.client.AuthData;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
@@ -24,6 +19,8 @@ public class LoginActivity extends AppCompatActivity {
 
     String sUser;
     String sPass;
+
+    UserDatabaseHelper helper = new UserDatabaseHelper(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,11 +54,13 @@ public class LoginActivity extends AppCompatActivity {
                 sUser = user.getText().toString();
                 sPass = pass.getText().toString();
 
-                if (sUser.matches("") && sPass.matches("")) {
+                String password = helper.searchPassword(sUser);
+
+                if(sPass.equals(password)){
                     Intent it = new Intent(LoginActivity.this, LookingRoomActivity.class);
                     startActivity(it);
-                    //return;
-                } else {
+                }
+                else {
                     Toast.makeText(getApplicationContext(), "Incorrect Login!", Toast.LENGTH_SHORT).show();
                 }
             }
