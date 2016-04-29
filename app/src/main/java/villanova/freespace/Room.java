@@ -1,34 +1,29 @@
 package villanova.freespace;
 
+/**
+ * Created by david_000 on 4/25/2016.
+ */
 public class Room {
-    private String name;
-    private String count;
-    private String maxCapacity;
-
-    public Room (String name, String count, String maxCapacity) {
-        this.name = name;
-        this.count = count;
-        this.maxCapacity = maxCapacity;
+    private String building;
+    private int currcap;
+    private int maxcap;
+    private String room;
+    private String type;
+    public Room() {
     }
-    public void setName(String name) {
-        this.name= name;
+    public String getBuilding(){
+        return building;
     }
-    public String getName() {
-        return name;
+    public int getCurrcap(){
+        return currcap;
     }
-    public void setCount(String count) {
-        this.count= count;
+    public int getMaxcap(){
+        return maxcap;
     }
-    /*public String getCount() {
-        return count;
-    }*/
-    public void setMaxCapacity(String maxCapacity) {
-        this.maxCapacity= maxCapacity;
+    public String getRoom(){
+        return room;
     }
-    /*public String getMaxCapacity() {
-        return maxCapacity;
-    }*/
-    public String getStatus(){
-        return count+"/"+maxCapacity;
+    public String getType(){
+        return type;
     }
 }
