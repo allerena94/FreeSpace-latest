@@ -1,28 +1,32 @@
 package villanova.freespace;
 
 public class Room {
-    private String name;
-    private int count;
+    private String building;
+    private String roomNumber;
     private String roomType;
     private String maxCapacity;
+    private int count;
+    private boolean groupBooked;
 
-    public Room (String name, String roomType, int count, String maxCapacity) {
-        this.name = name;
+    public Room (String building, String roomNumber, String roomType, String maxCapacity, int count) {
+        this.building = building;
+        this.roomNumber = roomNumber;
         this.roomType = roomType;
-        this.count = count;
         this.maxCapacity = maxCapacity;
+        this.count = count;
     }
-    public void setName(String name) {
-        this.name= name;
+
+    public String getBuilding() {
+        return building;
     }
 
     public String getName() {
-        return name;
+        return building + " " + roomNumber;
     }
 
-    public void setCount(int count) {
-        this.count= count;
-    }
+    /*public void setCount(int count) {
+        this.count = count;
+    }*/
 
     public void incrementCount() { count++; }
 
@@ -30,17 +34,21 @@ public class Room {
         return count;
     }
 
-    public void setRoomType(String roomType) {
+    /*public void setRoomType(String roomType) {
         this.roomType= roomType;
+    }*/
+
+    public String getRoomNumber() {
+        return roomNumber;
     }
 
     public String getRoomType() {
         return roomType;
     }
 
-    public void setMaxCapacity(String maxCapacity) {
+    /*public void setMaxCapacity(String maxCapacity) {
         this.maxCapacity= maxCapacity;
-    }
+    }*/
 
     public String getMaxCapacity() {
         return maxCapacity;
@@ -50,3 +58,4 @@ public class Room {
         return Integer.toString(count)+"/"+maxCapacity;
     }
 }
+

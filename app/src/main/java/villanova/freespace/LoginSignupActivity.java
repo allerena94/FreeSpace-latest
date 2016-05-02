@@ -9,23 +9,26 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+
 import java.util.Map;
 
 public class LoginSignupActivity extends AppCompatActivity {
 
     EditText mEmail;
-    EditText mUser;
+    //EditText mUser;
     EditText mPass;
     EditText mPassAgain;
     TextView mLoginRedirect;
     TextView mSignup;
 
-    UserDatabaseHelper helper = new UserDatabaseHelper(this);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_signup);
+
+        final Firebase myFirebaseRef = new Firebase("https://vufreespace.firebaseio.com/");
 
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/LatoLight.ttf");
         Typeface custom_font1 = Typeface.createFromAsset(getAssets(), "fonts/LatoRegular.ttf");
@@ -33,8 +36,8 @@ public class LoginSignupActivity extends AppCompatActivity {
         mEmail = (EditText) findViewById(R.id.email);
         mEmail.setTypeface(custom_font);
 
-        mUser = (EditText) findViewById(R.id.username);
-        mUser.setTypeface(custom_font);
+        //mUser = (EditText) findViewById(R.id.username);
+        //mUser.setTypeface(custom_font);
 
         mPass = (EditText) findViewById(R.id.pass);
         mPass.setTypeface(custom_font);
@@ -64,19 +67,21 @@ public class LoginSignupActivity extends AppCompatActivity {
                 }
 
                 else{
-                    User freeSpaceUser = new User();
-                    freeSpaceUser.setEmail(mEmail.getText().toString());
-                    freeSpaceUser.setUserName(mUser.getText().toString());
-                    freeSpaceUser.setPassword(mPass.getText().toString());
-
-                    helper.insertUser(freeSpaceUser);
+                    myFirebaseRef.createUser(mEmail.getText().toString(), mPass.getText().toString(), new Firebase.ValueResultHandler<Map<String, Object>>() {
+                        @Override
+                        public void onSuccess(Map<String, Object> result) {
+                            Toast.makeText(getApplicationContext(), "Successfully created user account with uid: " + result.get("uid"), Toast.LENGTH_SHORT).show();
+                        }
+                        @Override
+                        public void onError(FirebaseError firebaseError) {
+                            Toast.makeText(getApplicationContext(), "Error: sign up has failed" + firebaseError.getDetails(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
 
                     Intent it = new Intent(LoginSignupActivity.this, LoginActivity.class);
                     startActivity(it);
                 }
-
             }
         });
-
     }
 }

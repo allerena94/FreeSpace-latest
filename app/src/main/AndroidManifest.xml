@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="villanova.freespace" >
+    package="villanova.freespace"
+    android:installLocation="preferExternal">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -30,8 +31,6 @@
         </activity>
         <activity android:name=".LookingRoomActivity" >
         </activity>
-        <activity android:name=".IndividualDashboardActivity" >
-        </activity>
         <activity android:name=".GroupDashboardActivity" >
         </activity>
         <activity
@@ -39,6 +38,19 @@
             android:label="listview_available_rooms"
             android:theme="@style/AppTheme" >
         </activity>
+        <activity
+            android:name=".FindRoomsActivity"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name=".PickRoomActivity"
+            android:theme="@style/AppTheme" >
+        </activity>
+        <activity
+            android:name=".CurrentReservationsActivity"
+            android:theme="@style/AppTheme" >
+        </activity>
+
     </application>
 
 </manifest>

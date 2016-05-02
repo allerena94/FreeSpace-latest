@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/freespace_blue"
+    android:weightSum="1">
+
+    <TextView
+        android:layout_width="306dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:text="Pick Room"
+        android:textColor="@color/white"
+        android:textSize="35dp"
+        android:textAlignment="center"
+        android:id="@+id/availableRooms"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.11" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-5dp"
+        android:layout_marginLeft="5dp"
+        android:scrollbars="vertical"
+        android:id="@+id/listOfChosenRooms"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.11"
+        android:fastScrollAlwaysVisible="false"
+        android:touchscreenBlocksFocus="true"
+        android:divider="@color/white"
+        android:dividerHeight="0.5dp"
+        android:clickable="true"/>
+
+</LinearLayout>

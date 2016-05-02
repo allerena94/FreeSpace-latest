@@ -42,9 +42,4 @@ public class CustomAdapter extends ArrayAdapter<Room> {
         // 5. return rowView
         return rowView;
     }
-
-    /*protected static class ViewHolder{
-        protected TextView room_name;
-        protected TextView room_status;
-    }*/
 }

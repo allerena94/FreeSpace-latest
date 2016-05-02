@@ -1,7 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/freespace_blue"
+    android:weightSum="1">
 
+    <TextView
+        android:layout_width="306dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="20dp"
+        android:text="Current Reservations"
+        android:textColor="@color/white"
+        android:textSize="35dp"
+        android:textAlignment="center"
+        android:id="@+id/availableRooms"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="0.11" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.04"
+        android:background="#d8d8d8">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="1"
+            android:layout_marginStart="20dp"
+            android:textSize="40dp"
+            android:id="@+id/firstReservation"
+            android:layout_gravity="left|center_vertical"
+            android:textColor="#484848" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:layout_marginStart="75dp"
+            android:textSize="40dp"
+            android:id="@+id/firstReservationName"
+            android:layout_gravity="left|center_vertical"
+            android:textColor="#000000" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.04"
+        android:layout_marginTop="2dp"
+        android:background="#d8d8d8">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="2"
+            android:layout_marginStart="20dp"
+            android:textSize="40dp"
+            android:id="@+id/secondReservation"
+            android:layout_gravity="left|center_vertical"
+            android:textColor="#484848" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:layout_marginStart="75dp"
+            android:textSize="40dp"
+            android:id="@+id/secondReservationName"
+            android:layout_gravity="left|center_vertical"
+            android:textColor="#000000" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.04"
+        android:layout_marginTop="2dp"
+        android:background="#d8d8d8">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="3"
+            android:layout_marginStart="20dp"
+            android:textSize="40dp"
+            android:id="@+id/thirdReservation"
+            android:layout_gravity="left|center_vertical"
+            android:textColor="#484848" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:layout_marginStart="75dp"
+            android:textSize="40dp"
+            android:id="@+id/thirdReservationName"
+            android:layout_gravity="left|center_vertical"
+            android:textColor="#000000" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.04"
+        android:layout_marginTop="2dp"
+        android:background="#d8d8d8">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="4"
+            android:layout_marginStart="20dp"
+            android:textSize="40dp"
+            android:id="@+id/fourthReservation"
+            android:layout_gravity="left|center_vertical"
+            android:textColor="#484848" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:layout_marginStart="75dp"
+            android:textSize="40dp"
+            android:id="@+id/fourthReservationName"
+            android:layout_gravity="left|center_vertical"
+            android:textColor="#000000" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.04"
+        android:layout_marginTop="2dp"
+        android:background="#d8d8d8">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="5"
+            android:layout_marginStart="20dp"
+            android:textSize="40dp"
+            android:id="@+id/fifthReservation"
+            android:layout_gravity="left|center_vertical"
+            android:textColor="#484848" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:layout_marginStart="75dp"
+            android:textSize="40dp"
+            android:id="@+id/fifthReservationName"
+            android:layout_gravity="left|center_vertical"
+            android:textColor="#000000" />
+    </FrameLayout>
 
 </LinearLayout>

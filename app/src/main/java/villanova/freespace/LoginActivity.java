@@ -8,6 +8,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.firebase.client.AuthData;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+
 import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
@@ -20,12 +25,14 @@ public class LoginActivity extends AppCompatActivity {
     String sUser;
     String sPass;
 
-    UserDatabaseHelper helper = new UserDatabaseHelper(this);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Firebase.setAndroidContext(this);
         setContentView(R.layout.activity_login);
+
+        final Firebase myFirebaseRef = new Firebase("https://vufreespace.firebaseio.com/");
+
         Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/LatoLight.ttf");
         Typeface custom_font1 = Typeface.createFromAsset(getAssets(), "fonts/LatoRegular.ttf");
 
@@ -54,17 +61,19 @@ public class LoginActivity extends AppCompatActivity {
                 sUser = user.getText().toString();
                 sPass = pass.getText().toString();
 
-                String password = helper.searchPassword(sUser);
+                myFirebaseRef.authWithPassword(sUser, sPass, new Firebase.AuthResultHandler() {
+                    @Override
+                    public void onAuthenticated(AuthData authData) {
+                        Intent it = new Intent(LoginActivity.this, LookingRoomActivity.class);
+                        startActivity(it);
+                    }
 
-                if(sPass.equals(password)){
-                    Intent it = new Intent(LoginActivity.this, LookingRoomActivity.class);
-                    startActivity(it);
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), "Incorrect Login!", Toast.LENGTH_SHORT).show();
-                }
+                    @Override
+                    public void onAuthenticationError(FirebaseError firebaseError) {
+                        Toast.makeText(getApplicationContext(), "Incorrect Login!", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
     }
-
 }

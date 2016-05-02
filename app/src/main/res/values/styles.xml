@@ -6,6 +6,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/white</item>
         <item name="colorPrimary">@color/white</item>
+        <item name="colorControlActivated">@color/freespace_blue</item>
+        <item name="colorControlHighlight">@color/black</item>
     </style>
 
     <style name="myActionButtonStyle" parent="Widget.AppCompat.ActionButton">
